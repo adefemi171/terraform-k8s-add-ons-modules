@@ -1,5 +1,16 @@
 # Terraform Module for Installing and Configuring a Add-ons for Kubernetes Cluster
 
+This module installs and configures add-ons for a Kubernetes cluster. The add-ons include:
+
+- Adot Exporter
+- [AWS EBS CSI Driver](https://github.com/kubernetes-sigs/aws-ebs-csi-driver/tree/master/charts/aws-ebs-csi-driver)
+- [AWS Load Balancer Controller](https://github.com/aws/eks-charts/tree/master/stable/aws-load-balancer-controller)
+- [AWS VPC CNI](https://github.com/aws/eks-charts/tree/master/stable/aws-vpc-cni)
+- [Cluster Autoscaler](https://github.com/kubernetes/autoscaler/tree/master/charts/cluster-autoscaler)
+- [Gatekeeper](https://github.com/open-policy-agent/gatekeeper/tree/master/charts/gatekeeper)
+- [Metrics Server](https://github.com/kubernetes-sigs/metrics-server/tree/master/charts/metrics-server) - WIP
+
+
 ## Usage
 
 ```hcl
