@@ -1,5 +1,7 @@
 variable "cluster_autoscaler_namespace" {}
 
+variable "cluster_autoscaler_release_name" {}
+
 variable "cluster_autoscaler_chart_version" {}
 
 # Values should be cjanged according to the cloud provider

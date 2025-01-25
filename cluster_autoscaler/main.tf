@@ -2,7 +2,7 @@ resource "helm_release" "cluster_autoscaler" {
   namespace        = var.cluster_autoscaler_namespace
   create_namespace = true
 
-  name       = "cluster-autoscaler"
+  name       = var.cluster_autoscaler_release_name
   repository = "https://kubernetes.github.io/autoscaler"
   chart      = "cluster-autoscaler"
   version    = var.cluster_autoscaler_chart_version
