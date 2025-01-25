@@ -3,7 +3,7 @@ resource "helm_release" "aws_ebs_csi_driver" {
   create_namespace = true
 
   name       = var.aws_ebs_csi_driver_release_name
-  repository = "https://kubernetes-sigs.github.io/aws-ebs-csi-driver" 
+  repository = "https://kubernetes-sigs.github.io/aws-ebs-csi-driver"
   chart      = "aws-ebs-csi-driver"
   version    = var.aws_ebs_csi_driver_chart_version
 
@@ -13,13 +13,13 @@ resource "helm_release" "aws_ebs_csi_driver" {
       name  = set.value["name"]
       value = set.value["value"]
     }
-    
+
   }
 }
 
 resource "kubernetes_storage_class" "aws_ebs_csi_driver_storage_class" {
   metadata {
-    name      = "aws-ebs"
+    name = "aws-ebs"
   }
 
   storage_provisioner = var.aws_ebs_csi_driver_storage_provisioner
@@ -27,10 +27,10 @@ resource "kubernetes_storage_class" "aws_ebs_csi_driver_storage_class" {
   volume_binding_mode = var.aws_ebs_csi_driver_volume_binding_mode
 
   parameters = {
-    type = var.aws_ebs_csi_driver_parameters_type
+    type      = var.aws_ebs_csi_driver_parameters_type
     encrypted = var.aws_ebs_csi_driver_parameters_encrypted
-    kmsKeyId = var.aws_ebs_csi_driver_parameters_kmsKeyId
+    kmsKeyId  = var.aws_ebs_csi_driver_parameters_kmsKeyId
   }
-  
+
 }
 

@@ -13,7 +13,7 @@ resource "helm_release" "cluster_autoscaler" {
       name  = set.value["name"]
       value = set.value["value"]
     }
-    
+
   }
 }
 
