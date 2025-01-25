@@ -42,5 +42,4 @@ module "aws_ebs_csi_driver" {
 }
 ```
 
-
 > **Note:** This module is a WIP and is partially functional. It is not recommended for production use.
