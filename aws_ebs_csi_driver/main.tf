@@ -1,13 +1,13 @@
-module "helm_release" {
+module "aws_ebs_csi_driver" {
   source = "../helm_release"
 
-  chart_namespace = var.aws_ebs_csi_driver_namespace
-  chart_release_name = var.aws_ebs_csi_driver_release_name
+  chart_namespace      = var.aws_ebs_csi_driver_namespace
+  chart_release_name   = var.aws_ebs_csi_driver_release_name
   chart_repository_url = "https://kubernetes-sigs.github.io/aws-ebs-csi-driver"
-  chart_name = "aws-ebs-csi-driver"
-  chart_version = var.aws_ebs_csi_driver_chart_version
-  chart_values = var.ebs_csi_driver_values
-  
+  chart_name           = "aws-ebs-csi-driver"
+  chart_version        = var.aws_ebs_csi_driver_chart_version
+  chart_values         = var.ebs_csi_driver_values
+
 }
 
 resource "kubernetes_storage_class" "aws_ebs_csi_driver_storage_class" {

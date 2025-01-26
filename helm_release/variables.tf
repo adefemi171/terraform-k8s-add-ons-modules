@@ -24,5 +24,5 @@ variable "chart_values" {
     value = string
   }))
   description = "The values to be passed to the chart"
-  default = []
+  default     = []
 }

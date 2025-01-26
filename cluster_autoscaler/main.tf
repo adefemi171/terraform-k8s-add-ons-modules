@@ -1,11 +1,11 @@
-module "helm_release"{
-  source = "../helm_release"
-  chart_namespace = var.cluster_autoscaler_namespace
-  chart_release_name = var.cluster_autoscaler_release_name
+module "cluster_autoscaler" {
+  source               = "../helm_release"
+  chart_namespace      = var.cluster_autoscaler_namespace
+  chart_release_name   = var.cluster_autoscaler_release_name
   chart_repository_url = "https://kubernetes.github.io/autoscaler"
-  chart_name = "cluster-autoscaler"
-  chart_version = var.cluster_autoscaler_chart_version
-  chart_values = var.cluster_autoscaler_values
+  chart_name           = "cluster-autoscaler"
+  chart_version        = var.cluster_autoscaler_chart_version
+  chart_values         = var.cluster_autoscaler_values
 }
 
 resource "kubernetes_service_account" "cluster_autoscaler_service_account" {
