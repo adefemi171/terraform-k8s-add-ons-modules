@@ -11,3 +11,11 @@ variable "aws_adot_exporter_values" {
   }))
   default = []
 }
+
+variable "metada_name" {}
+
+variable "secret_type" {}
+
+variable "secrets_data" {
+  type = map(string)
+}
