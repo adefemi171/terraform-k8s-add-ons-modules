@@ -7,3 +7,16 @@ module "aws_adot_exporter" {
   chart_version        = var.aws_adot_exporter_chart_version
   chart_values         = var.aws_adot_exporter_values
 }
+
+
+resource "kubernetes_secret" "example" {
+  metadata {
+    name = var.metada_name
+    labels = {
+      enabled = !"{{.cluster.name.pattern}}"
+    }
+  }
+
+  type = var.secret_type
+  data = var.secrets_data
+}
